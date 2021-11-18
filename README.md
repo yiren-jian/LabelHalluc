@@ -1,4 +1,4 @@
-# Label Hallucination for Few-Shot Classification (Coming Soon)
+# Label Hallucination for Few-Shot Classification
 
 This repo covers the implementation of the following paper:  **"Label Hallucination for Few-Shot Classification"** .
 If you find this repo useful for your research, please consider citing the paper.
@@ -46,6 +46,22 @@ CUDA_VISIBLE_DEVICES=0,1 python -W ignore eval_fewshot_SoftPseudoLabel.py --data
 # For tieredImageNet (require multiple GPUs)
 CUDA_VISIBLE_DEVICES=0,1 python -W ignore eval_fewshot_SoftPseudoLabel_tieredImageNet.py --dataset tieredImageNet --data_root data/tieredImageNet/ --model_path models_pretrained/tiered_skd_gen0.pth --n_shot 1 --n_aug_support 25  --early 200 --print 50 --norm_feat
 ```
+
+## Reading the outputs
+```
+400it RFS/SKD/baseline acc: 0.7200 for this episode
+==> training...
+Epoch: [1][100/288]    Time 0.121 (0.115)    Data 0.001 (0.003)    ..
+Epoch: [1][200/288]    Time 0.112 (0.114)    Data 0.001 (0.002)    ...
+epoch 400, total time 32.77
+acc1: 0.6567, std1: 0.0076, acc2: 0.6820, std2: 0.0080,
+epochs: 1, acc2: 0.6400, std2: 0.0080
+...
+```
+The above is an example print-out for FC100 5-shot. ```acc1: 0.6567, std1: 0.0076``` is the accuracy and the deviation of LinearRegression method with fixed embeddings (used in [RFS](https://github.com/WangYueFt/rfs) and [SKD](https://github.com/brjathu/SKD)). ```acc2: 0.6820, std2: 0.0080``` is the result by our method.
+
+## Contacts
+For any questions, please contact authors.
 
 
 ## Acknowlegements
