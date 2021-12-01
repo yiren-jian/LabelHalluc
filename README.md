@@ -2,6 +2,14 @@
 
 This repo covers the implementation of the following paper:  **"Label Hallucination for Few-Shot Classification"** .
 If you find this repo useful for your research, please consider citing the paper.
+```bibtex
+@article{Jian2022LabelHalluc,
+    author = {Yiren Jian and Lorenzo Torresani},
+    title = {Label Hallucination for Few-shot Classification},
+    journal = {AAAI},
+    year = {2022}
+}
+```
 
 ## Requirements
 
