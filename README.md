@@ -23,7 +23,7 @@ Download and unzip the dataset, put them under ```data``` directory.
 ## Embedding Learning
 Please follow [RFS](https://github.com/WangYueFt/rfs), [SKD](https://github.com/brjathu/SKD) and [Rizve et al.](https://github.com/nayeemrizve/invariance-equivariance) (or other transfer learning methods) for the embedding learning. [RFS](https://github.com/WangYueFt/rfs) provides a Dropbox link for downloading their pre-trained models for miniImageNet.
 
-We provide our pretrained embedding models by [SKD](https://github.com/brjathu/SKD) and [Rizve et al.](https://github.com/nayeemrizve/invariance-equivariance) at [Dropbox](https://www.dropbox.com/sh/6af4q91qrvv4t7u/AACrC960J_sc85dlYh0-K_MSa?dl=0). Note that this is NOT an official release of models by original authors, and those models perform slightly worse than what reported in their papers. Better models could be trained with longer durations and/or by hyper-parameters tuning.
+We provide our pretrained embedding models by [SKD] and [Rizve et al.] at [Dropbox](https://www.dropbox.com/sh/6af4q91qrvv4t7u/AACrC960J_sc85dlYh0-K_MSa?dl=0). Note that this is NOT an official release of models by original authors, and those models perform slightly worse than what reported in their papers. Better models could be trained with longer durations and/or by hyper-parameters tuning.
 
 Once finish the embedding training, put the pre-trained models in ```models_pretrained``` directory.
 
