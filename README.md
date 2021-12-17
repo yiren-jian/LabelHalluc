@@ -87,8 +87,8 @@ Similarly, we carry out 10-way and 20-way experiments on CIFAR-FS, our finetunin
 ​We also try on miniImageNet. Due to the limitation of GPU memory, we apply no data augmentation for neither SKD or ours. Our finetuning runs for 300 steps on baseset.
 | miniImageNet |      10-way 5-shot     |       20-way 10-shot    |
 | :----------: | :--------------------: | :---------------------: |
-| SKD 		   |     70.46 +/- 0.40     |      57.09 +/- 0.28     |
-| ours 		   |     72.41 +/- 0.45     |      62.14 +/-0.27      |
+| SKD          |     70.46 +/- 0.40     |      57.09 +/- 0.28     |
+| ours         |     72.41 +/- 0.45     |      62.14 +/-0.27      |
 
 ### Base and novel sets are far away
 Reviewers also raised questions on how the method performs when the base and novel sets are far away (i.e., base set has only animal classes and novel set has only non-animal classes).
