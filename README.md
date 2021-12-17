@@ -81,24 +81,24 @@ We apply Label-Halluc (our method pretrained w/ SKD) on 10-way 5-shot and 20-way
 Similarly, we carry out 10-way and 20-way experiments on CIFAR-FS, our finetuning runs for 2 epochs on baseset.
 | CIFAR-FS |     10-way 5-shot     |    20-way 10-shot      |
 | :------: | :-------------------: | :--------------------: |
-| SKD 		 |     79.01+/-0.80      |   71.33+/-0.30         |
-| ours 		 |     80.99+/-0.75      |   75.40+/-0.31         |
+| SKD 	   |     79.01+/-0.80      |   71.33+/-0.30         |
+| ours 	   |     80.99+/-0.75      |   75.40+/-0.31         |
 
 ​We also try on miniImageNet. Due to the limitation of GPU memory, we apply no data augmentation for neither SKD or ours. Our finetuning runs for 300 steps on baseset.
 | miniImageNet |      10-way 5-shot     |       20-way 10-shot    |
 | :----------: | :--------------------: | :---------------------: |
-| SKD 				 |     70.46 +/- 0.40     |      57.09 +/- 0.28     |
-| ours 				 |     72.41 +/- 0.45     |      62.14 +/-0.27      |
+| SKD 		   |     70.46 +/- 0.40     |      57.09 +/- 0.28     |
+| ours 		   |     72.41 +/- 0.45     |      62.14 +/-0.27      |
 
 ### Base and novel sets are far away
 Reviewers also raised questions on how the method performs when the base and novel sets are far away (i.e., base set has only animal classes and novel set has only non-animal classes).
 
 We use the 16 classes of animals from the 64 class of miniImageNet base set to construct our new base dataset. The set of novel classes is now restricted to 11 classes of non-animals out of the original 20 classes. During meta-testing, we sample 5 classes from those 11 novel classes to construct our 5-way episodes. To accelerate the evaluation time, we follow the shorthened-learning strategy already explored during the rebuttal. This reduces the finetuning steps of Label-Halluc from ~300 steps to 160 steps.
 
-|     			 |  SKD-GEN0  |  label-hallc  |
+|     	     |  SKD-GEN0  |  label-hallc  |
 | :--------: | :--------: | :-----------: |
-|  1-shot    |    39.38	  |      43.56		|
-|  5-shot    |    56.78   |      64.99  	|
+|  1-shot    |    39.38	  |      43.56	  |
+|  5-shot    |    56.78   |      64.99    |
 
 The reviewer further pointed to experiments on Meta-dataset (Triantafilou et al., 2020, Meta-dataset: A dataset of datasets for learning to learn from few examples. ICLR 2020).
 
