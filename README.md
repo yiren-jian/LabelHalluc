@@ -1,6 +1,6 @@
 # Label Hallucination for Few-Shot Classification
 
-This repo covers the implementation of the following paper:  **[Label Hallucination for Few-Shot Classification](https://arxiv.org/abs/2112.03340)** .
+This repo covers the implementation of the following paper:  **[Label Hallucination for Few-Shot Classification](https://arxiv.org/abs/2112.03340)** accepted by AAAI-2022.
 If you find this repo useful for your research, please consider citing the paper.
 ```bibtex
 @article{Jian2022LabelHalluc,
@@ -23,6 +23,8 @@ If you find this repo useful for your research, please consider citing the paper
 
 This repo was tested with Ubuntu 18.04.5 LTS, Python 3.6, PyTorch 1.4.0, and CUDA 10.1. You will need at least 32GB RAM and 22GB VRAM (i.e. two Nvidia RTX-2080Ti) for running full experiments in this repo.
 
+It's also tested on a machine with Python 3.6, PyTorch 1.10 and CUDA 11, with RTX A6000 (conda environment for this configuration is provided in `labelhalluc.yml`).
+
 ## Download Data
 The data we used here is preprocessed by the repo of [MetaOptNet](https://github.com/kjunelee/MetaOptNet), Please find the renamed versions of the files in below link by [RFS](https://github.com/WangYueFt/rfs).
 
@@ -44,10 +46,10 @@ CUDA_VISIBLE_DEVICES=0 python -W ignore eval_fewshot_SoftPseudoLabel.py --datase
 # For FC100
 CUDA_VISIBLE_DEVICES=0 python -W ignore eval_fewshot_SoftPseudoLabel.py --dataset FC100 --data_root data/FC100/ --model_path models_pretrained/fc100_skd_gen1.pth --n_shot 5 --n_aug_support 5 --epoch 1 --norm_feat
 
-# For miniImageNet (require multiple GPUs)
+# For miniImageNet (require multiple GPUs, or one GPU with 24 GB)
 CUDA_VISIBLE_DEVICES=0,1 python -W ignore eval_fewshot_SoftPseudoLabel.py --dataset miniImageNet --data_root data/miniImageNet/ --model_path models_pretrained/mini_skd_gen1.pth --n_shot 5 --n_aug_support 5 --epoch 1 --norm_feat
 
-# For tieredImageNet (require multiple GPUs)
+# For tieredImageNet (require multiple GPUs, or one GPU with 24 GB)
 CUDA_VISIBLE_DEVICES=0,1 python -W ignore eval_fewshot_SoftPseudoLabel_tieredImageNet.py --dataset tieredImageNet --data_root data/tieredImageNet/ --model_path models_pretrained/tiered_skd_gen0.pth --n_shot 5 --n_aug_support 5  --early 200 --print 50 --norm_feat
 ```
 To perform 5-way 1-shot classifications, run:
@@ -58,10 +60,10 @@ CUDA_VISIBLE_DEVICES=0 python -W ignore eval_fewshot_SoftPseudoLabel.py --datase
 # For FC100
 CUDA_VISIBLE_DEVICES=0 python -W ignore eval_fewshot_SoftPseudoLabel.py --dataset FC100 --data_root data/FC100/ --model_path models_pretrained/fc100_skd_gen1.pth --n_shot 1 --n_aug_support 25 --epoch 5 --norm_feat
 
-# For miniImageNet (require multiple GPUs)
+# For miniImageNet (require multiple GPUs, or one GPU with 24 GB)
 CUDA_VISIBLE_DEVICES=0,1 python -W ignore eval_fewshot_SoftPseudoLabel.py --dataset miniImageNet --data_root data/miniImageNet/ --model_path models_pretrained/mini_skd_gen1.pth --n_shot 1 --n_aug_support 25 --early 150 --norm_feat
 
-# For tieredImageNet (require multiple GPUs)
+# For tieredImageNet (require multiple GPUs, or one GPU with 24 GB)
 CUDA_VISIBLE_DEVICES=0,1 python -W ignore eval_fewshot_SoftPseudoLabel_tieredImageNet.py --dataset tieredImageNet --data_root data/tieredImageNet/ --model_path models_pretrained/tiered_skd_gen0.pth --n_shot 1 --n_aug_support 25  --early 200 --print 50 --norm_feat
 ```
 
@@ -100,7 +102,7 @@ We use the 16 classes of animals from the 64 class of miniImageNet base set to c
 |  1-shot    |    39.38	  |      43.56	  |
 |  5-shot    |    56.78   |      64.99    |
 
-The reviewer further pointed to experiments on Meta-dataset (Triantafilou et al., 2020, Meta-dataset: A dataset of datasets for learning to learn from few examples. ICLR 2020).
+The reviewer further pointed to experiments on Meta-dataset (Triantafilou et al., 2020, Meta-dataset: A dataset of datasets for learning to learn from few examples. ICLR 2020), which we do not have.
 
 I believe those are experiments to strengthen one's submission in this area.
 
