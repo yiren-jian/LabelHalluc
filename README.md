@@ -65,6 +65,48 @@ CUDA_VISIBLE_DEVICES=0,1 python -W ignore eval_fewshot_SoftPseudoLabel.py --data
 CUDA_VISIBLE_DEVICES=0,1 python -W ignore eval_fewshot_SoftPseudoLabel_tieredImageNet.py --dataset tieredImageNet --data_root data/tieredImageNet/ --model_path models_pretrained/tiered_skd_gen0.pth --n_shot 1 --n_aug_support 25  --early 200 --print 50 --norm_feat
 ```
 
+Overall, our method has more significant improvements in 5-shot (than 1-shot).
+
+## Additional experiments
+### Strong results in 10-way and 20-way
+During the review of NeurIPS, we found that our method can achieve even larger gains in 10-ways and 20-ways settings.
+
+We apply Label-Halluc (our method pretrained w/ SKD) on 10-way 5-shot and 20-way 10-shot classification problems on FC-100, CIFAR-FS and miniImageNet. We use a 5x data augmentation for both SKD and our method in the 10-way 5-shot setting, the same data augmentation strategy used in the main paper. Due to the limitation of GPU memory, for the 20-way 10-shot setting, we do not use data augmentation for SKD or our method. The following results use the same learning policy discussed in the main paper, with the exception of finetuning for 2 epochs in the case of FC-100 and CIFAR-FS.
+
+| FC100 |     10-way 5-shot     |     20-way 10-shot     |
+| :---: | :-------------------: | :--------------------: |
+|  SKD  |    46.66 +/- 0.49     |     37.55 +/- 0.22     |
+| ours  |    49.63 +/- 0.49     |     42.21 +/-0.22      |
+
+Similarly, we carry out 10-way and 20-way experiments on CIFAR-FS, our finetuning runs for 2 epochs on baseset.
+| CIFAR-FS |     10-way 5-shot     |    20-way 10-shot      |
+| :------: | :-------------------: | :--------------------: |
+| SKD 		 |     79.01+/-0.80      |   71.33+/-0.30         |
+| ours 		 |     80.99+/-0.75      |   75.40+/-0.31         |
+
+​We also try on miniImageNet. Due to the limitation of GPU memory, we apply no data augmentation for neither SKD or ours. Our finetuning runs for 300 steps on baseset.
+| miniImageNet |      10-way 5-shot     |       20-way 10-shot    |
+| :----------: | :--------------------: | :---------------------: |
+| SKD 				 |     70.46 +/- 0.40     |      57.09 +/- 0.28     |
+| ours 				 |     72.41 +/- 0.45     |      62.14 +/-0.27      |
+
+### Base and novel sets are far away
+Reviewers also raised questions on how the method performs when the base and novel sets are far away (i.e., base set has only animal classes and novel set has only non-animal classes).
+
+We use the 16 classes of animals from the 64 class of miniImageNet base set to construct our new base dataset. The set of novel classes is now restricted to 11 classes of non-animals out of the original 20 classes. During meta-testing, we sample 5 classes from those 11 novel classes to construct our 5-way episodes. To accelerate the evaluation time, we follow the shorthened-learning strategy already explored during the rebuttal. This reduces the finetuning steps of Label-Halluc from ~300 steps to 160 steps.
+
+|     			 |  SKD-GEN0  |  label-hallc  |
+| :--------: | :--------: | :-----------: |
+|  1-shot    |    39.38	  |      43.56		|
+|  5-shot    |    56.78   |      64.99  	|
+
+The reviewer further pointed to experiments on Meta-dataset (Triantafilou et al., 2020, Meta-dataset: A dataset of datasets for learning to learn from few examples. ICLR 2020).
+
+I believe those are experiments to strengthen one's submission in this area.
+
+## Tuning the hyper-parameters
+Better results can be obtained by tuning hyper-parameters in our method. `--alpha1` and `--alpha2` (default to 1) are used to control the weighting between CE loss on support set and KD loss on pseudo-labeled baseset. By default, we also keep 1:1 ratio of base and novel images in a finetuning batch. This can be tuned by setting `--n_aug_batch_sizes` (default to 1). For example, having `--n_aug_batch_sizes 2` will lead to 1:2 ratio of novel and base images in a finetuning batch. `--T` controls the temperature scaling in the distillation loss. Total learning steps can also be adjusted by `--early_stop_steps`.
+
 ## Reading the outputs
 ```
 400it RFS/SKD/baseline acc: 0.7200 for this episode
@@ -83,4 +125,4 @@ For any questions, please contact authors.
 
 
 ## Acknowlegements
-Thanks to [RFS](https://github.com/WangYueFt/rfs), for the preliminary implementations.
+Thanks to [RFS](https://github.com/WangYueFt/rfs) for the preliminary implementations, [SKD](https://github.com/brjathu/SKD) and [Rizve et al.](https://github.com/nayeemrizve/invariance-equivariance) for their embedding pre-training scripts.
