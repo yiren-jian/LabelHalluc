@@ -10,14 +10,6 @@ If you find this repo useful for your research, please consider citing the paper
     year = {2022}
 }
 ```
-```bibtex
-@article{jian2021label,
-      title={Label Hallucination for Few-Shot Classification},
-      author={Yiren Jian and Lorenzo Torresani},
-      journal={arXiv preprint arXiv:2112.03340},
-      year={2021}
-}
-```
 
 ## Requirements
 
