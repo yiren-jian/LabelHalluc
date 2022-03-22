@@ -1,6 +1,6 @@
 # Label Hallucination for Few-Shot Classification
 
-This repo covers the implementation of the following paper:  **[Label Hallucination for Few-Shot Classification](https://arxiv.org/abs/2112.03340)** accepted by AAAI-2022.
+This repo covers the implementation of the following paper:  **[Label Hallucination for Few-Shot Classification](https://arxiv.org/abs/2112.03340)** by Yiren Jian and Lorenzo Torresani, accepted by AAAI-2022.
 If you find this repo useful for your research, please consider citing the paper.
 ```bibtex
 @article{Jian2022LabelHalluc,
