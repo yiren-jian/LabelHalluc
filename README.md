@@ -1,6 +1,6 @@
 # Label Hallucination for Few-Shot Classification
 
-This repo covers the implementation of the following paper:  **[Label Hallucination for Few-Shot Classification](https://arxiv.org/abs/2112.03340)** by [Yiren Jian](https://cs.dartmouth.edu/~yirenjian/) and [Lorenzo Torresani](https://ltorresa.github.io/home.html), accepted by AAAI-2022. [Appendix](https://cs.dartmouth.edu/~yirenjian/data/LabelHalluc-appendix.pdf)
+This repo covers the implementation of the following paper:  **[Label Hallucination for Few-Shot Classification](https://arxiv.org/abs/2112.03340)** and [Appendix](https://cs.dartmouth.edu/~yirenjian/data/LabelHalluc-appendix.pdf) by [Yiren Jian](https://cs.dartmouth.edu/~yirenjian/) and [Lorenzo Torresani](https://ltorresa.github.io/home.html), presented at AAAI-2022.
 If you find this repo useful for your research, please consider citing the paper.
 ```bibtex
 @article{Jian2022LabelHalluc,
