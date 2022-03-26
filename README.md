@@ -6,7 +6,7 @@ If you find this repo useful for your research, please consider citing the paper
 @article{Jian2022LabelHalluc,
     author = {Yiren Jian and Lorenzo Torresani},
     title = {Label Hallucination for Few-shot Classification},
-    journal = {AAAI},
+    journal = {AAAI conference on artificial intelligence},
     year = {2022}
 }
 ```
