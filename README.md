@@ -29,6 +29,8 @@ We provide our pretrained embedding models by [SKD] and [Rizve et al.] at [Dropb
 
 Once finish the embedding training, put the pre-trained models in ```models_pretrained``` directory.
 
+**Update**: If you consider training your own embedding models, I created a new github [page](https://github.com/yiren-jian/embedding-learning-FSL). It corrects some issues in SKD and IER (minor) to run smoothly on my own machine.
+
 ## Running Our Fine-tuning
 To perform 5-way 5-shot classifications, run:
 ```shell
