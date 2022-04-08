@@ -4,7 +4,7 @@ This repo covers the implementation of the following paper:  **[Label Hallucinat
 If you find this repo useful for your research, please consider citing the paper.
 ```bibtex
 @article{Jian2022LabelHalluc,
-    author = {Yiren Jian and Lorenzo Torresani},
+    author = {Jian, Yiren and Torresani, Lorenzo},
     title = {Label Hallucination for Few-shot Classification},
     journal = {AAAI conference on artificial intelligence},
     year = {2022}
