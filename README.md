@@ -7,17 +7,17 @@ If you find this repo useful for your research, please consider citing the paper
 @inproceedings{Jian2022LabelHalluc,
   author = {Jian, Yiren and Torresani, Lorenzo},
   title = {Label Hallucination for Few-shot Classification},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
   year = {2022}
 }
 ```
 
 ```bibtex
 @article{jian2021label,
-  title={Label Hallucination for Few-Shot Classification},
-  author={Jian, Yiren and Torresani, Lorenzo},
-  journal={arXiv preprint arXiv:2112.03340},
-  year={2021}
+  title = {Label Hallucination for Few-Shot Classification},
+  author = {Jian, Yiren and Torresani, Lorenzo},
+  journal = {arXiv preprint arXiv:2112.03340},
+  year = {2021}
 }
 ```
 
