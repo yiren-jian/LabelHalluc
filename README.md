@@ -1,14 +1,17 @@
 # Label Hallucination for Few-Shot Classification
 
-This repo covers the implementation of the following paper:  **[Label Hallucination for Few-Shot Classification](https://arxiv.org/abs/2112.03340)** ([Appendix](https://cs.dartmouth.edu/~yirenjian/data/LabelHalluc-appendix.pdf)) by [Yiren Jian](https://cs.dartmouth.edu/~yirenjian/) and [Lorenzo Torresani](https://ltorresa.github.io/home.html), presented at AAAI-2022.
+This repo covers the implementation of the following paper:  **[Label Hallucination for Few-Shot Classification](https://ojs.aaai.org/index.php/AAAI/article/view/20659)** ([Appendix](https://cs.dartmouth.edu/~yirenjian/data/LabelHalluc-appendix.pdf)) by [Yiren Jian](https://cs.dartmouth.edu/~yirenjian/) and [Lorenzo Torresani](https://ltorresa.github.io/home.html), presented at AAAI-2022.
 If you find this repo useful for your research, please consider citing the paper.
 
 ```bibtex
-@inproceedings{Jian2022LabelHalluc,
-  author = {Jian, Yiren and Torresani, Lorenzo},
-  title = {Label Hallucination for Few-shot Classification},
-  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
-  year = {2022}
+@inproceedings{jian2022label,
+  title={Label hallucination for few-shot classification},
+  author={Jian, Yiren and Torresani, Lorenzo},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={36},
+  number={6},
+  pages={7005--7014},
+  year={2022}
 }
 ```
 
