@@ -15,15 +15,6 @@ If you find this repo useful for your research, please consider citing the paper
 }
 ```
 
-```bibtex
-@article{jian2021label,
-  title = {Label Hallucination for Few-Shot Classification},
-  author = {Jian, Yiren and Torresani, Lorenzo},
-  journal = {arXiv preprint arXiv:2112.03340},
-  year = {2021}
-}
-```
-
 ## Requirements
 
 This repo was tested with Ubuntu 18.04.5 LTS, Python 3.6, PyTorch 1.4.0, and CUDA 10.1. You will need at least 32GB RAM and 22GB VRAM (i.e. two Nvidia RTX-2080Ti) for running full experiments in this repo.
