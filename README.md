@@ -2,7 +2,7 @@
 
 This repo covers the implementation of the following paper:  **[Label Hallucination for Few-Shot Classification](https://ojs.aaai.org/index.php/AAAI/article/view/20659)** ([Appendix](https://cs.dartmouth.edu/~yirenjian/data/LabelHalluc-appendix.pdf)) by [Yiren Jian](https://cs.dartmouth.edu/~yirenjian/) and [Lorenzo Torresani](https://ltorresa.github.io/home.html), presented at AAAI-2022.
 
-<img src="figures/LabelHalluc.png" width="400">
+<img src="figures/LabelHalluc.png" width="600">
 
 If you find this repo useful for your research, please consider citing the paper.
 
